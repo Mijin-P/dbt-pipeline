@@ -2,6 +2,7 @@
 
 ## A propos 
 Ce projet est un projet portfolio réalisé dans le cadre de ma montée en compétences vers la Data Engineering. L'objectif est double : m'entraîner sur une chaîne de données de bout en bout, et démontrer concrètement ma maîtrise des outils et des bonnes pratiques du métier. Plutôt qu'un simple exercice théorique, j'ai voulu construire un pipeline complet et fonctionnel, reproductible et documenté.
+Note : ce projet sera amené à évoluer
 
 ## Structure du projet
 
