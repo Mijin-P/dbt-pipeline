@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  # --- TESTS POUR LA TABLE CLIENTS ---
+  - name: slv_clients
+    description: "Table nettoyée des clients"
+    columns:
+      - name: client_id
+        description: "Clé primaire du client"
+        tests:
+          - unique
+          - not_null
+      - name: email
+        tests:
+          - unique # On s'assure que deux clients n'ont pas la même adresse email
+#      - name: segment
+#        tests:
+#          - accepted_values:
+#              values: ['particulier', 'professionnel',''] # Bloque si une autre valeur apparaît (ex: faute de frappe)
+
+  # --- TESTS POUR LA TABLE PRODUITS ---
+  - name: slv_produits
+    description: "Catalogue des produits bancaires"
+    columns:
+      - name: produit_id
+        description: "Clé primaire du produit"
+        tests:
+          - unique
+          - not_null
+
+  # --- TESTS POUR LA TABLE CONTRATS ---
+  - name: slv_contrats
+    description: "Table des contrats souscrits"
+    columns:
+      - name: contrat_id
+        description: "Clé primaire du contrat"
+        tests:
+          - unique
+          - not_null
+      - name: client_id
+        description: "Clé étrangère vers slv_clients"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('slv_clients')
+              field: client_id
+              # Ce test vérifie que chaque client_id dans les contrats existe bien dans la table clients !
+      - name: produit_id
+        description: "Clé étrangère vers slv_produits"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('slv_produits')
+              field: produit_id

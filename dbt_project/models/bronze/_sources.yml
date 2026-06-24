@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: postgres_source
+    schema: raw
+    tables:
+        - name: clients
+        - name: contrats
+        - name: produits
