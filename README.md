@@ -24,7 +24,7 @@ Le projet illustre une chaîne data end-to-end :
 Le pipeline organise les données en trois couches de qualité croissante :
 
 - **Bronze** — données brutes ingérées telles quelles depuis l'API, sans transformation. 
-- **Silver** — données nettoyées : typage, suppression des doublons, normalisation, gestion des valeurs manquantes.
+- **Silver** — données nettoyées
 - **Gold** — données agrégées et modélisées selon les besoins métier, directement exploitables pour l'analyse ou la visualisation.
 
 ## Prérequis
